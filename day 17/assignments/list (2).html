@@ -1,0 +1,30 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <input type="button" value="for" onclick="fn_for()"/>
+       
+        <ul id="ul">
+
+        </ul>
+
+    <script>
+        function fn_for()
+        {
+        var str="";
+        var ulObj=document.getElementById("ul");
+        for(var i=0;i<=9;i++)
+        {   
+            if(i%2===0)
+            str+="<li style='color:green;'>wlcome to java script-"+i+"</li>";
+            else
+            str+="<li style='color:blue;'>wlcome to java script-"+i+"</li>";
+        }
+       
+        ulObj.innerHTML=str;
+    }
+    </script>
+    </body>
+    </html>

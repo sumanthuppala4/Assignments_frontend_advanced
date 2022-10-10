@@ -1,0 +1,32 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="button" value="get data" id="button"  onclick="fn_getData()"/>
+        <br/>
+        <br/>
+        <table id="tr" c style="border:2px solid blue;">
+            
+            
+        </table>
+        <script>
+            function fn_getData()
+            {
+                var tableObj=document.getElementById("tr");
+                var str="<tr>";
+                var arr=["html","css3","jquery","angular js","bootstrap"];
+                for(var i=0;i<arr.length;i++)
+                {
+                    str+="<tr>";
+                    str+="<td>"+(i+1)+"</td><td>"+arr[i]+"</td>";
+                    str+="</tr>";
+
+                }
+                console.log(str);
+                tableObj.innerHTML=str;
+               
+            }
+        </script>
+        </body>
+        </html>

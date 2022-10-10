@@ -1,0 +1,55 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <input type="button" value="for" onclick="fn_for()"/>
+        <input type="button" value="while" onclick="fn_while()"/>
+        <input type="button" value=" do while" onclick="fn_dowhile()"/>
+        <ul id="ul">
+
+        </ul>
+
+    <script>
+        function fn_for()
+        {
+        var str="";
+        var ulObj=document.getElementById("ul");
+        for(var i=0;i<=9;i++)
+        {
+            str+="<li>wlcome to java script-"+i+"</li>";
+        }
+       
+        ulObj.innerHTML=str;
+    }
+    function fn_while()
+        {
+        var str="";
+        var ulObj=document.getElementById("ul");
+        var i=0;
+        while(i<=10)
+        {
+            str+="<li>wlcome to java script-"+i+"</li>";
+            i=i+2;
+        }
+        
+        ulObj.innerHTML=str;
+    }
+    function fn_dowhile()
+        {
+        var str="";
+        var ulObj=document.getElementById("ul");
+        var i=10;
+        while(i>0)
+        {
+            str+="<li>wlcome to java script-"+i*i+"</li>";
+            i--;
+        }
+       
+        ulObj.innerHTML=str;
+    }
+
+    </script>
+    </body>
+</html>

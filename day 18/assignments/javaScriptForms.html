@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form  action="login.php"   method="get"   onsubmit="fn_submitData()">
+            <label>customer name</label>
+            <input  type="text"  id="t1" onblur="fn_cursorLeave()"/>
+            <span id="span1"></span>
+            <br/><br/>
+            <label>source station</label>
+            <select id="select1" id="s1">
+               
+                <option value="image1.jpg">Hyderabad</option>
+                <option value="image2.jpg">banglore</option>
+                <option value="image3.jpg">chennai</option>
+    
+            </select><br><br>
+            <label>destination station</label>
+            <select id="select2"  id="s2" >
+               
+                <option value="image1.jpg">Hyderabad</option>
+                <option value="image2.jpg">banglore</option>
+                <option value="image3.jpg">chennai</option>
+    
+            </select>
+            <br><br>
+            <label>contact number</label>
+            <input type="text" id="t2"  onblur="fn_cursorLeave() "/><br><br>
+            <span id="span2"></span>
+            <input type="submit">
+
+        </form>
+        <script>
+
+        function fn_submitData()
+        {
+           var textObj=document.getElementById("t1").value;
+           var contactObj=document.getElementById("t2").value;
+
+           
+           if(textObj=="")
+           {
+               alert("please fill customer name");
+               event.preventDefault();
+           }
+           if((contactObj.length!=10 | isNaN(contactObj)==true)) 
+           {
+               alert("please  enter valid number");
+               event.preventDefault();
+           }
+           if(document.getElementById("select1").value==document.getElementById("select2").value)
+           {
+            alert("source and destination should be differerent")
+            event.preventDefault();
+           }
+
+
+        }
+        
+
+    </script>
+
+    </body>
+</html>

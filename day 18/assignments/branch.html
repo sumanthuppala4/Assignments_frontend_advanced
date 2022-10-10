@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+
+        <select id="select" onchange="fn_change()">
+            <option value="image1.jpg">Hyderabad</option>
+            <option value="image2.jpg">banglore</option>
+            <option value="image3.jpg">chennai</option>
+
+        </select>
+        <img src="" id="img1">
+
+       <script>
+        function fn_change()
+        {
+            var imgObj=document.getElementById("img1");
+            var selectObj=document.getElementById("select");
+            imgObj.src=selectObj.value;
+
+
+        }
+        
+       </script>
+
+
+    </body>
+</html>

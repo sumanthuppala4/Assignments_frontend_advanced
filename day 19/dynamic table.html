@@ -1,0 +1,92 @@
+<html>
+	<head></head>
+	<body>
+		<h3>JavaScript Programming -- Array Of Objects - Dynamic DOM  </h3>
+		<hr/>
+		
+		<input type="text" id="txt">
+		<input type="button"   value="Add Rows"   onclick="fn_addRows()"  />
+	 
+		<br/><br/>
+		<table  id="table1"  border="2"  width="500"  cellpadding="10" cellspacing="0">
+			<tr>
+					<th>S.No</th>
+					<th>Student Name</th>
+					<th>Skillset</th>
+			</tr>
+		</table>
+	 
+		
+		<script>	
+		
+			
+			var  studentsArray =   [
+				{sid :  454545,   sname  :  "Smith-1",  skillset :  "Angular"},
+				{sid :  454546,   sname  :  "Smith-2",  skillset :  "React"},
+				{sid :  454547,   sname  :  "Smith-3",  skillset :  "Node JS"},
+				{sid :  454548,   sname  :  "Smith-4",  skillset :  "HTML5"},
+				{sid :  454549,   sname  :  "Smith-5",  skillset :  "CSS3"},
+				{sid :  454542,   sname  :  "Smith-5",  skillset :  "Bootstrap"},
+				{sid :  document.getElementById("txt").value,   sname  :  "Smith-6",  skillset :  "jQuery"}
+			];
+		
+		
+
+                var count=0;
+		 
+			  function fn_addRows()
+			  {		
+			           
+                        if(count==0)
+                        { 
+                            count++;
+						  var  tableObj =  document.getElementById("table1");	 
+					
+						for(let  item  of  studentsArray)
+						{
+							 		var  row1 =  tableObj.insertRow(-1);			
+						
+									var  cell1 =  row1.insertCell(-1);
+									var  cell2 =  row1.insertCell(-1);
+									var  cell3 =  row1.insertCell(-1);
+									
+									cell1.innerHTML = item.sid;						
+									cell2.innerHTML = item.sname;						
+									cell3.innerHTML = item.skillset;	
+
+						}
+                    }
+                    else{  
+                              for(let i=0;i<studentsArray.length;i++)
+                              {
+                                  table1.deleteRow(-1);
+
+                              }
+                              alert("hi");
+
+                              for(let  item  of  studentsArray)
+						         {
+							 		var  row1 =  tableObj.insertRow(-1);			
+						
+									var  cell1 =  row1.insertCell(-1);
+									var  cell2 =  row1.insertCell(-1);
+									var  cell3 =  row1.insertCell(-1);
+									
+									cell1.innerHTML = item.sid;						
+									cell2.innerHTML = item.sname;						
+									cell3.innerHTML = item.skillset;	
+						       } 
+                    }
+			  
+					 
+			  }		
+			  
+		 
+			 
+			 
+		</script>
+		
+	 
+		
+	</body>
+</html>

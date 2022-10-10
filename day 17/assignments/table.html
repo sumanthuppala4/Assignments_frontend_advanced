@@ -1,0 +1,62 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="button" value="get data" id="button"  onclick="fn_getData()"/>
+        <br/>
+        <br/>
+        <table id="tr" c style="border:2px solid blue;" >
+            
+            
+        </table>
+        <script>
+            function fn_getData()
+            {    
+                
+                var tableObj=document.getElementById("tr");
+                var str="";
+                 str+=" <tr> <th > course</th><th>course</th><th>course</th><th>course</th></tr>";
+                
+                var arr=["html5","css3","jquery","angular","bootstrap"];
+               
+                var count=0;
+                
+                
+                for(var i=0;i<arr.length;i++)
+                {
+                     str+="<tr>";
+                     for(var j=0; j<4;j++)
+                     {
+                        
+
+                         str+= "<td style='border:1px solid grey'>"+arr[count]+"</td>";
+                         count++;
+                         if (count==5)
+                         {
+
+
+                            count=0;
+                         }
+                      
+                     }
+                    str+="</tr>";
+                    
+                } 
+                console.log(str);
+                   tableObj.innerHTML=str;
+              
+                   
+
+                
+               
+
+
+
+            }
+
+
+        </script>
+    </body>
+
+</html>

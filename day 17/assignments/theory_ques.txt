@@ -1,0 +1,18 @@
+1. What are the types of Pop up boxes available in JavaScript ?  Find some more details about pop-boxes? 
+A. Alert box (only ok, no cancel), Confirm box (okay and cancel), Prompt box (if you want to give input to user)
+
+2. What is BOM?    Diff... between DOM and BOM?
+A. Browser Object Model. Also conatins browser components like history, location(redirect to an url), navigator and screen unlike DOM. 
+
+Assignment-2
+~~~~~~~~~~~~
+5. Find some details about the following methods:
+			a. push()
+			b. pop()
+			c. splice()
+A. push()   : adds new items to the end of an array
+   pop()    : removes the last element of an array
+   splice() : method adds and/or removes array elements
+  
+   synatx:
+   splice(index,how many elements to remove, element1 to which is to be added, element2 to which is to be added,......)
