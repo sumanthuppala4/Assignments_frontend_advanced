@@ -1,0 +1,49 @@
+<html>
+	<head></head>
+	<body>
+		<h3>JavaScript Programming -- Event Handling </h3>
+		<hr/>
+		
+		
+		<br/><br/>
+		<img   src="Image1.jpg"  class="c1"  border="2"  width="80"  height="60"  />
+		<img   src="Image2.jpg"  class="c1"  border="2"  width="80"  height="60"  />
+		<img   src="Image3.jpg"  class="c1"  border="2"  width="80"  height="60"  />
+		<img   src="Image4.jpg"  class="c1"  border="2"  width="80"  height="60"  />
+<hr/>
+		<img   src="Image1.jpg"  id="bigImg"  border="2"  width="340"  height="340"  />
+		
+ 
+	 
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<script>
+		
+			  //  value ---   input, select, textarea
+              /*
+			  function fn_updateImage(imgId)
+			  {
+					var  imgObj1  =  document.getElementById(imgId);					 
+					var   bigImgObj   =   document.getElementById("bigImg");
+					
+					 bigImgObj.src =  imgObj1.src;				 
+			  }	
+              */	
+              $(document).ready(function()
+		     {
+				 $(".c1").hover(function()  
+				 {
+                   
+                    $("#bigImg").attr("src",$(this).attr("src"));	 
+				 });
+				 
+				 
+				
+				 
+		});   
+			 
+		</script>
+		
+	 
+		
+	</body>
+</html>

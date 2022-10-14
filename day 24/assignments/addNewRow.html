@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="text" id="t1" placeholder="product name">
+        <input type="text" id="t2" placeholder="quantity">
+        <input type="text" id="t3" placeholder="price">
+        <input type="button" id="b1" value="add to table"/>
+        <br/><br/>
+
+        <table border="2" width="400" >
+            <tr width="300">
+               
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Units In Stock</th>
+            </tr>
+            <tr>
+                
+                <td>Printer</td>
+                <td>2500.00</td>
+                <td>20</td>
+            </tr>
+        </table>
+        
+	<script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	
+	<script>
+	
+		$(document).ready(function()
+		{
+            $("#b1").click(function(){
+                alert( $("#t1").val())
+                let  str  = "<tr>  <td>"+ $('#t1').val()+"</td>  <td>"+$("#t2").val()+"</td>  <td>"+$("#t3").val()+"</td>  </tr>";
+
+                $("table").append(str);
+               
+
+           
+        
+        });
+        });
+        </script>
+    </body>
+</html>

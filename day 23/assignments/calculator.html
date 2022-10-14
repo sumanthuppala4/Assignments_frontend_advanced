@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title> Welcome | Bill </title>
+        <style>
+         .c1{
+            background-color: coral;
+         }
+        </style>
+    </head>
+    <body>
+        <br/>
+            <br/>
+            <table border="1" align="center " id="tb" cellspacing="10px">
+                <tr>
+                    <td colspan="4"  id="t1" style="text-align:right; height:30px;" ></td>   
+                </tr>
+                <tr>
+                   
+                    <td><input type="button" value="1" class="c1"  style="width:30px;"/></td>
+                    <td><input type="button" value="2" class="c1"  style="width:30px;"/></td>
+                    <td><input type="button" value="3" class="c1"  style="width:30px;"/></td>
+                    <td><input type="button" value="0" class="c1"  style="width:30px;"/></td>
+                   
+                </tr>
+                <tr>
+                    <td><input type="button" value="4"   class="c1"  style="width:30px;"/></td>
+                    <td><input type="button" value="5"   class="c1"  style="width:30px;"/></td>
+                    <td><input type="button" value="6"   class="c1"  style="width:30px;"/></td>
+                    <td><input type="button" value="cl"  id="clear"  style="width:30px;background-color:darkgrey;"/></td>
+                   
+                   
+                </tr>
+                <tr>
+                   
+                    <td><input type="button" value="7" class="c1"  style="width:30px;"/></td>
+                    <td><input type="button" value="8" class="c1"  style="width:30px;"/></td>
+                    <td><input type="button" value="9" class="c1"  style="width:30px;"/></td>
+                    <td><input type="button" value="=" id="equal"  style="width:30px;background-color:darkgrey;"/></td>
+                </tr>
+                <tr>
+                   
+                    <td><input type="button" value="+" class="c1"  style="width:30px; background-color:darkgrey; "/></td>
+                    <td><input type="button" value="-" class="c1"  style="width:30px;background-color: darkgrey"/></td>
+                    <td><input type="button" value="*" class="c1"  style="width:30px;background-color: darkgrey"/></td>
+                    <td><input type="button" value="/" class="c1"  style="width:30px;background-color: darkgrey"/></td>
+                </tr>
+                
+                    
+            </table>
+            
+            <p id="para"></p>
+      
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script>
+           
+            $(document).ready(function(){
+                var str="";
+                $(".c1").click(function()
+                {   
+                    c=$(this).val()
+                    str+=c;
+                    $("#t1").html(str)
+               
+                })
+                $("#equal").click(function()
+                {
+                    $("#t1").html(eval(str))
+                    str=eval(str);
+
+                })
+                $("#clear").click(function()
+                {
+                    $("#t1").html("");
+                    str="";
+                })
+
+              
+
+            });
+                
+                
+               
+           
+            
+        </script>
+    </body>
+</html>

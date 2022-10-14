@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title> Welcome | Bill </title>
+        <style>
+            tb{
+                text-align: center;
+                
+            }
+            form{
+                width: 350px;
+                border: 5px solid black;
+                border-radius: 3px;
+                padding: 15px;
+                background-color: white;
+                height: 175px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="h1">00:00:00</h1>
+        <input type="button"  value="start" id="b1" />
+        <input type="button"  value="stop" id="b2"/>
+        
+       
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script>
+          $(document).ready(function()
+		{  
+                let sec="0";
+                let se=0;
+                let min="00";
+                let mi=0;
+                let hrs="00";
+                let hr=0;
+                
+               
+				 $("#b1").click(function()  
+				 {	
+
+                   			 
+                   window.print= setInterval(function() { 
+                        se+=1;
+                        if(se>=60)
+                        {
+                            se=0;
+                           
+                            {
+                                if(mi<10)
+                                {
+                                    min="0";
+                                    min=min+mi;
+                                    mi++;
+                                }
+                                else{
+                                    min=mi;
+                                    mi++;
+                                }
+                              
+
+                            }
+                        }
+                        if(mi>60)
+                        {
+                            mi=0;
+                           
+                            {
+                                if(hr<10)
+                                {  
+                                    
+                                    hrs="0";
+                                    hrs=hrs+hr;
+                                    hr++;
+                                }
+                                else{
+                                    hr++;
+                                    hrs=hr;
+                                }
+                            }
+                            
+                        }
+                      
+                        if(se<10)
+                        { 
+                            sec="0";
+                            sec=sec+se;
+                            out=hrs+":"+min+":"+sec;
+                            $("#h1").text(out);
+                        }
+                       else{
+                        sec=se;
+                        out=hrs+":"+min+":"+sec;
+                         $("#h1").text(out);}
+
+
+                    }, 10);
+
+                    $("#b2").click(function () {
+                   clearInterval(window.print);
+                  $("#h1").html("00:00:00")
+            });
+				 });
+
+
+          
+
+            
+				 
+				 
+		});
+        </script>
+    </body>
+</html>

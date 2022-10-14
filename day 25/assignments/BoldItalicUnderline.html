@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+</html>
+<head>
+    <style>
+       .c1{
+          color:white;
+          background-color: blue;
+       }
+       .b{
+            font-weight: bold;
+
+          }
+          .i{
+            font-style: italic;
+
+          }
+          .u{
+              text-decoration: underline;
+          }
+        
+
+
+    </style>
+
+</head>
+<body>
+    <input type="button" id="b1" value="B"/>
+    <input type="button" id="b2" value="I"/>
+    <input type="button" id="b3" value="U"/>
+<p style="border:1px solid blue; border-radius:10px; text-align: justify; padding: 5px;"> this is a paragraph. this is a paragraph. this is a paragraph. this is a paragraph. this is a paragraph. this is a paragraph. this is a paragraph. this is a paragraph. this is a paragraph. this is a paragraph. this is a paragraph. this is a paragraph. this is a paragraph.</p>
+
+<script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+$(document).ready(function(){				 
+		 
+    $("#b1").click(function()
+    {     
+         $("#b1").toggleClass("c1");
+         $("p").toggleClass("b");
+    });
+    $("#b2").click(function()
+    {     
+         $("#b2").toggleClass("c1");
+         $("p").toggleClass("i");
+    });
+    
+    $("#b3").click(function()
+    {
+         $("#b3").toggleClass("c1");
+         $("p").toggleClass("u");
+    });
+    
+});
+     
+     
+</script>	
+</body>

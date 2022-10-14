@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<HTML>
+    <HEAD>
+
+    </HEAD>
+    <body>
+        <h3> ASYNC AND AWAIT</h3>
+        <label>empno</label>
+        <input type="text" id="txt">
+        <input type="button" value="get data" onclick=" getServerData()"/>
+        <p id="p1"></p>
+
+        <script>
+            var textValue=document.getElementById("txt");
+            var paraObj=document.getElementById("p1");
+           
+/*
+            async function  fn_get()
+			{
+				 try 
+				 {
+					var response =  await  getServerData(); 
+					
+				 }
+				 catch(error)
+				 {
+					console.log("429 error");
+				 }					
+			}*/
+            async  function  getServerData()
+		  {			 
+                   let url =  " https://dummy.restapiexample.com/api/v1/employee/"+  textValue.value;
+                  // url+=textValue;
+                   try{
+                       
+				        let response  =  await  fetch(url);
+				       let  result  =  await  response.json();
+                       console.log(result.data);
+                       paraObj.innerHTML=`id:${result.data.id},
+                       employee_name: ${result.data.employee_name},
+                        employee_salary:${result.data.employee_salary},
+                         employee_age:${result.data.employee_age} , profile_image=" " `
+                      
+                       
+
+                   }
+                   catch(error)
+				 {    paraObj.innerHTML= "error 429";
+					console.log("429 error");
+				 }	
+				 
+		  }	
+
+         
+		  
+		 
+
+        </script>
+    </body>
+</HTML>

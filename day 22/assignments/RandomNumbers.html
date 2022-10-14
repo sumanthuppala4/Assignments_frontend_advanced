@@ -1,0 +1,43 @@
+<html>
+<head></head>
+<body>
+<h3>Asynchronous Programming in  JavaScript</h3>
+	<hr/> 
+	 
+	<script>
+			 
+			const   myPromise = new Promise(  (resolve,  reject) => 
+			{				 
+				 
+				
+				
+				let  count = Math.floor(Math.random() * 50) + 1;
+                console.log(count);
+				
+					if(count%5 == 0)
+					{
+						resolve(`random generated number from promise ${count}`);
+					}
+					else
+					{
+						reject("Error Message from promise");
+					}
+			});
+			 
+			
+		
+			myPromise.then( (response)  => 
+			{
+				 console.log(response);
+			})
+			.catch( (errorResponse)  => 
+			{				
+				 console.log(errorResponse);
+			});
+			
+			
+			
+		
+	</script>	 
+</body>
+</html>

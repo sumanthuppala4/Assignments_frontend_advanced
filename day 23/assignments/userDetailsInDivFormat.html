@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+       
+    </style>
+</head>
+<body>
+
+	<h3> jQuery  -  Getting remote data  from  Server </h3>
+	<hr />
+ 
+	<button  id="b1">Get Server Data</button>
+	<hr/>
+	
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+	</script>
+
+<script>
+			$(document).ready(function(){
+			
+				  $("#b1").click(function(){				  
+							  $.ajax(
+								{
+									url : " https://reqres.in/api/users",
+									type: "GET",
+									success :  function(response)
+									{
+										//let  resData =  JSON.parse(  response );
+										
+										displayData(response.data);
+									}		
+								});				 
+				});
+			});
+			
+			
+			function   displayData(res)
+			{
+				for(let  item  of  res)
+				{
+						
+                          let str=`<div    style=" width:300px ;  margin:20px; float:left; text-align:center; padding:20px; border:1px solid black;"> <img src="${item.avatar}"  style="border-radius:100px;"/><br/>
+                                   <p>${item.first_name }   ${item.last_name}</p>
+                                   <br/>
+                                   ${item.email}</div>`
+
+                        
+						    $("body").append(str);
+                            
+					
+				}
+				
+
+			}
+			
+			
+
+</script>
+
+</body>
+</html>

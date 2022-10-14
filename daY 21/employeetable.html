@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body> 
+      <label>search value</label>
+      <input type="text"  id="te" />
+      <input type="button" value="Find By Empno" onclick="f2()"/>
+      <input type="button" value="Find By Job" onclick="f1()"/> <br/><br/>
+      <table  id="table1"  border="2"  width="500"  cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Emp.No</th>
+            <th>EName</th>
+            <th>job</th>
+            <th>salary</th>
+            <th>dept no</th>
+        </tr>
+      </table>
+
+
+
+        <script>
+             var arrayObj=[{ empno:24,ename:"smith" , job: "teacher", salary:"700", depno:"ECE"},
+                         { empno:25,ename:"david" ,   job: "manager", salary:"900", depno:"CSE"},
+                         { empno:26, ename:"ram"  , job: "STAFF", salary:"1000", depno:"BIO"},
+                         { empno:27,  ename:"ravi" , job: "manager", salary:"800", depno:"EEE"},
+                         { empno:28,  ename:"kumar" ,  job: "HOD", salary:"500", depno:"CHE"}];
+              
+              var  tableObj =  document.getElementById("table1");	
+
+              function f1()
+              {
+                //alert("hi");
+                var textObj=document.getElementById("te").value;
+                
+                var jobArray=arrayObj.filter(item=>item.job==textObj);
+                fn_deleteRows();
+             
+              
+                for(let  item  of  jobArray)
+						{
+							 		var  row1 =  tableObj.insertRow(-1);			
+						
+									var  cell1 =  row1.insertCell(-1);
+									var  cell2 =  row1.insertCell(-1);
+									var  cell3 =  row1.insertCell(-1);
+                  var  cell4 =  row1.insertCell(-1);
+                  var  cell5 =  row1.insertCell(-1);
+                  
+
+									
+									cell1.innerHTML = item.empno;
+                  cell2.innerHTML = item.ename;	
+
+									cell3.innerHTML = item.job;						
+									cell4.innerHTML = item.salary;	
+                  cell5.innerHTML = item.depno;						
+								
+
+
+						}
+          }
+            function f2()
+
+            {  //alert("hi");
+                  var textObj=document.getElementById("te").value;
+                  var emp=arrayObj.find(item=>item.empno==textObj);
+                 
+                  if(emp==undefined)
+                  {
+                    
+                    return;
+                  }
+                  fn_deleteRows();
+
+                  
+                  
+                  var  row1 =  tableObj.insertRow(-1);			
+			       			
+                   var  cell1 =  row1.insertCell(-1);
+                   var  cell2 =  row1.insertCell(-1);
+                   var  cell3 =  row1.insertCell(-1);
+                   var  cell4 =  row1.insertCell(-1);
+                   var  cell5 =  row1.insertCell(-1);
+                   
+       
+                   
+                   cell1.innerHTML = emp.empno;
+                   cell2.innerHTML = emp.ename;
+                   cell3.innerHTML = emp.job;						
+                   cell4.innerHTML = emp.salary;	
+                   cell5.innerHTML = emp.depno;	
+
+            } 
+
+          function   fn_deleteRows()
+            {  
+
+              if(tableObj.rows.length>1){
+                let len=tableObj.rows.length
+                for(let i=1;i<len;i++)
+              {
+                tableObj.deleteRow(-1);
+              }
+            }
+            }
+
+         
+                
+                
+
+           
+
+        </script>
+    </body>
+</html>

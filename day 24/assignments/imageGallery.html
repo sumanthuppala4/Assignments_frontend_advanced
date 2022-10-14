@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            img{
+                width:80px;
+                height:80px;
+                border-radius: 50px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <table  width="400" >
+           
+            <tr>
+                
+                <td><img src="image1.jpg"></td>
+                <td><img src="Image2.jpg"></td>
+                <td><img src="Image3.jpg"></td>
+                <td><img src="image4.jpg"></td>
+
+                
+            </tr>
+            <tr>
+                <td><img src="image4.jpg"></td>
+                <td><img src="Image5.jpg"></td>
+                <td><img src="Image1.jpg"></td>
+                <td><img src="Image2.jpg"></td>
+              
+            </tr>
+            <tr>
+                <td><img src="Image2.jpg"></td>
+                <td><img src="Image3.jpg"></td>
+                <td><img src="image4.jpg"></td>
+                <td><img src="Image1.jpg"></td>
+                
+            </tr>
+            <tr>
+                <td><img src="Image5.jpg"></td>
+                <td><img src="Image1.jpg"></td>
+                <td><img src="Image2.jpg"></td>
+                <td><img src="Image3.jpg"></td>
+                
+                
+            </tr>
+        </table>
+
+
+
+        <script  src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script>
+	
+            $(document).ready(function()
+            {
+                setInterval(function (){
+                    setInterval(function(){
+                        $("table tr:odd img:even,table tr:even img:odd").fadeToggle(2000);
+                        setInterval(function(){ 
+                            $("table tr:even img:even,table tr:odd img:odd").fadeToggle(2000);
+                        },2000);
+                        
+                    
+                    
+                    
+                }, 4000);
+                
+               
+            });
+        });
+        
+            </script>
+    </body>
+</html>

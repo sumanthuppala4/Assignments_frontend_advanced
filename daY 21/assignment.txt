@@ -1,0 +1,32 @@
+1. How to add / remove events dynamically without using event attributes (eg:  onclick, ...)
+A.
+
+let btnAdd = document.querySelector('#add');
+let btnRemove = document.querySelector('#remove');
+let output = document.querySelector('h1');
+
+btnAdd.addEventListener('click', () => {
+    document.addEventListener('mousemove', handleEvent);
+});
+ 
+btnRemove.addEventListener('click', () => {
+    document.removeEventListener('mousemove', handleEvent);
+});
+ 
+function handleEvent(e){
+    output.innerText = `X: ${e.pageX} - Y: ${e.pageY}`;
+};
+
+2. How to destructuring arrays in JavaScript?
+A.let a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);
+// expected output: 10
+
+console.log(b);
+// expected output: 20
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
